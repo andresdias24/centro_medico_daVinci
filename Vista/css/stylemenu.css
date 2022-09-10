@@ -1,0 +1,196 @@
+html, body {
+  	margin: 0px;
+  	padding: 0px;
+  	font-family: arial,sans-serif;
+  	font-size: 15px;
+}
+body{
+	padding-top: 80px;
+}
+.menu{
+	margin: 0px;
+  	padding: 0px;
+  	font-family: arial,sans-serif;
+  	font-size: 15px;
+}
+
+.iconos{
+	font-family: arial,sans-serif;
+  	font-size: 15px;
+}
+
+.logo{
+  	background-color: rgb(74, 159, 216);
+  	padding-top: 0px;
+}
+
+div.logo p{
+	font-size: 50px;
+	font-family: 'Abril Fatface', cursive;
+	color: white;
+	line-height: 1;
+}
+.lema{
+	padding-top: 0px;
+	text-align: left;
+}
+
+.negrita{
+	padding-top: 0px;
+	font-weight: bold;
+}
+.cabecera div.menu{
+  	background-color: rgb(43, 160, 160);
+}
+.menu ul{
+	display: flex;
+	justify-content: right;
+	padding-top: 20px;
+	padding-left: 0px;
+	float: left;
+} 
+.menu ul li{
+	color: yellow;
+	text-decoration: none;
+	list-style: none;
+	padding: 0px 20px 0px 20px;
+}
+.menu ul li a{
+	text-decoration: none;
+}
+.navegacion li a:hover{
+	background-color: pink;
+}
+a:hover,a:visited,a:link,a:active{
+	color: black;
+}
+.redes-sociales{
+	float: right;
+	padding-right: 25px;
+}
+.redes-sociales ul li a::before{
+	font-family: 'FontAwesome';
+	font-size: 2rem;
+	color: white;
+	line-height: 1;
+}
+.redes-sociales ul li a[href*="facebook.com"]::before{
+	content: '\f230';
+}
+.redes-sociales ul li a[href*="twitter.com"]::before{
+	content: '\f081';
+}
+.redes-sociales ul li a[href*="instagram.com"]::before{
+	content: '\f16d';
+}
+.redes-sociales ul li a[href*="youtube.com"]::before{
+	content: '\f16a';
+}
+.subtitulos{
+	text-align: center;
+	color: #C1C0C0;
+	font-size: 26px;
+	line-height: 1;
+	font-weight: bold;
+	letter-spacing: 3px;
+}
+.cuadro{
+	width: 100px;
+	height: 8px;
+	background-color: rgb(255, 200, 0);
+	margin: auto;
+	margin-top: -8px;
+	margin-bottom: 20px;
+}
+.parrafo{
+	display: flex;
+	justify-content: center;
+	text-align: justify;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.copy{
+	text-align: center;
+	font-size: 12px;
+}
+.titulo{
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: rgb(52, 66, 66)
+}
+.aico{
+	font-weight: bold;
+}
+.servicios{
+	display: block;
+	margin: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.contenido{
+   display: flex;
+   padding-left: 45px;
+}
+article img{
+	display: block;
+	float: right;
+}
+.datos{
+	text-align: center;
+}
+.parrafonosotros{
+	text-align: justify;
+	width: auto;
+}
+.cifras{
+	background-color: rgb(255, 200, 0);
+	height: 95px;
+}
+.cifra{
+	font-size: 40px;
+	font-family: 'Abril Fatface', cursive;
+	color: white;
+	line-height: 1;
+	text-align: center;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.descripcifra{
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(52, 66, 66);
+	text-align: center;
+}
+.vertical{
+	width: 2px;
+	height: 50px;
+	background-color: white;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.proyectos ul{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	line-height: 1;
+}
+.proyectos ul li{
+	list-style: none;
+}
+.formulario-contacto{
+	border: 2px solid #C1C0C0;
+	border-radius: 7px;
+
+}
+/*.btn{
+	background-color: rgb(255, 200, 0);
+} */
+footer{
+	background-color: rgb(255, 200, 0);
+	padding: 1px;
+}
+small{
+	justify-content: center;
+}
