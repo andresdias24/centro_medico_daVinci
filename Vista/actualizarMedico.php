@@ -73,6 +73,9 @@ while($registro=$resultado->fetch_object())
     <td> <a href="index2.php?pag=editarMedico&idMedico=<?php echo $registro->idMedico?>">
       <span class="class btn btn-warning">Editar</span>
     </a></td>
+    <td> <a href="index2.php?pag=vistaEliminarMedico&idMedico=<?php echo $registro->idMedico?>">
+      <span class="class btn btn-danger">Eliminar</span>
+    </a></td>
   </tr>  
  <?php
 }  //cerrando el ciclo while

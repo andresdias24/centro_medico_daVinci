@@ -1,19 +1,14 @@
 <?php
-
-extract ($_REQUEST); /*recoger todas las variables que pasan Método GET o POST*/
-require "../Modelo/conexionBasesDatos.php";
-require "../Modelo/usuario.php";
-
-if (isset($_REQUEST['idUsuario'])) {
-  
+extract ($_REQUEST); 
+require "../Modelo/conexionBaseDatos.php";
+require "../Modelo/Usuario.php";
+if (isset($_REQUEST['usuario'])) {
 $objMedico= new Usuario();
-$resultado=$objMedico->ConsultarIdUsuario($_REQUEST['idUsuario']);
-//Asignar a una variable el resultado de la consulta
 
- if (isset($resultado))  //quiere decir que los datos estan bien
-     { if($resultado->num_rows >0 ){
-    
-     $registro=$resultado->fetch_object()?>
+$resultado=$objMedico->consultarIdUsuario($_REQUEST['usuario']);
+if (isset($resultado)) 
+{ if($resultado->num_rows >0 ){
+  $registro=$resultado->fetch_object()?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +22,7 @@ $resultado=$objMedico->ConsultarIdUsuario($_REQUEST['idUsuario']);
       <hr />
  
   <div class="form-horizontal">
-    <form id="form1" name="form1" action="../Controlador/validarActualizarPaciente.php" method="POST">
+    <form id="form1" name="form1" action="../Controlador/validarActualizarUsuario.php" method="POST">
       <div class="form-group">
          <label class="col-sm-4 control-label">Usuario</label>
             <input class="form-control col-sm-5" name="usuario" type="text" id="usuario"  value="<?php echo $registro->usuLogin?>" required />
@@ -61,7 +56,7 @@ $resultado=$objMedico->ConsultarIdUsuario($_REQUEST['idUsuario']);
               <button type="submit" class="btn btn-dark btn-block">Actualizar</button>
             </div>
           </div>
-          <input name="idPaciente" type="hidden" value="<?php echo $registro->idPaciente?>">
+          <input name="idPaciente" type="hidden" value="<?php echo $registro->usuLogin?>">
     </form>
 
     <hr />
@@ -69,7 +64,6 @@ $resultado=$objMedico->ConsultarIdUsuario($_REQUEST['idUsuario']);
 </div>
 </body>
 </html>
- 
     <?php
   }
   }

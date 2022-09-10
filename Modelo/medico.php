@@ -108,5 +108,15 @@ class Medico
 		return $resultado;	
 	}
 
+	// delete medico
+	public function eliminarMedico($idMedico)
+	{
+		$this->Conexion=Conectarse();
+		$sql="delete from medicos where idMedico='$idMedico'";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
+	}
+
 	
 }

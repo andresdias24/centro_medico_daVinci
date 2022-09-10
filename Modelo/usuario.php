@@ -80,8 +80,46 @@ class Usuario
 		$this->Conexion->close();
 		return $resultado;	
 	}
-		
+
+	// editar usuario
+	public function editarUsuario($usuario)
+	{
+		$this->Conexion=Conectarse();
+		$sql="update usuarios set usuPassword=md5('$this->password'), usuEstado='$this->estado', usuRol='$this->rol' where usuLogin='$usuario'";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
+	}
 	
+	// consultar por id usuarios
+	public function consultarIdUsuario($id)
+	{
+		$this->Conexion=Conectarse();
+		$sql=" select * from usuarios where usuLogin = '$id' ";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
+	}
+	
+	// update users
+	public function updateUsuario($id)
+	{
+		$this->Conexion=Conectarse();
+		$sql="update usuarios set usuPassword=md5('$this->password'), usuEstado='$this->estado', usuRol='$this->rol' where usuLogin='$id'";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
+	}
+
+	// delete users
+	public function deleteUsuario($id)
+	{
+		$this->Conexion=Conectarse();
+		$sql="delete from usuarios where usuLogin='$id'";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
+	}
 }
 
 ?>

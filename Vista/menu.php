@@ -17,9 +17,20 @@
     <div class="container-fluid cabecera fixed-top">
       <div class="row">
         <div class="col-md-2 logo">
-          <span class="float-left"><strong>
-              <p>daVinci <img src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-health-symbol-free-png-picture-image_1344400.jpg" alt="logo" style="width: 50; height: 50px;"> </p>
-            </strong></span>
+            <div style="display: flex;">
+              <div>
+
+                <img src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-health-symbol-free-png-picture-image_1344400.jpg" alt="logo" style="width: 50; height: 50px;">
+
+              </div>
+              <div>
+              <span class="float-left">
+              <strong>
+              <p>daVinci </p>
+            </strong>
+          </span>
+              </div>
+            </div>
           <span class="lema">
             <!--<span class="negrita"> <a href="index2.php">SISTEMA MEDICO</a></span><br> -->
             <span class="negrita">Usuario: </span><?php echo $_SESSION['user'] ?>
@@ -38,8 +49,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarUsuario">Agregar Usuarios</a>
                   <a class="dropdown-item" href="index2.php?pag=consultarUsuario">Consultar Usuarios</a>
-                  <a class="dropdown-item" href="index2.php?pag=consultarUsuario">Editar Usuarios</a>
-                  <a class="dropdown-item" href="index2.php?pag=consultarUsuario">Eliminar Usuarios</a>
+                  <a class="dropdown-item" href="index2.php?pag=actualizarUsuario">Editar  o Eliminar Usuarios</a>
 
                 </div>
               </li>
@@ -51,8 +61,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarMedico">Agregar Médico</a>
                   <a class="dropdown-item" href="index2.php?pag=consultarMedico">Consultar Médicos</a>
-                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Editar Médicos</a>
-                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Eliminr Médicos</a>
+                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Editar o Eliminar Médicos</a>
                 </div>
               </li>
 
@@ -61,12 +70,12 @@
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Tratamientos
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+               <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarMedico">Agregar Tratamiento</a>
                   <a class="dropdown-item" href="index2.php?pag=consultarMedico">Consultar Tratamiento</a>
                   <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Editar Tratamiento</a>
-                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Eliminar Tratamiento</a>
-                </div>
+                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Eliminar Tratamiento</a>  
+                </div>-->
               </li>
 
 
@@ -74,12 +83,12 @@
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Citas
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <!--  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarMedico">Agregar Cita</a>
                   <a class="dropdown-item" href="index2.php?pag=consultarMedico">Consultar Cita</a>
                   <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Editar Cita</a>
                   <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Eliminar Cita</a>
-                </div>
+                </div> -->
               </li>
             </ul>
           </div>
