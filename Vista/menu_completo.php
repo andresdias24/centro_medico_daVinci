@@ -18,7 +18,8 @@
         <span class="float-left"> <p>daVinci</p></span>
         <span class="lema">
         <!--<span class="negrita"> <a href="index2.php">SISTEMA MEDICO</a></span><br> -->
-        <span class="negrita">Usuario:</span><?php echo $_SESSION['user']?>
+        <span class="negrita">Usuario:</span><?php echo $_SESSION['rol']?>
+
         </span>
       </div>
     <div class="col-md-10 menu navbar navbar-expand-md navbar-light">

@@ -16,7 +16,7 @@ $existe = $resultado->num_rows;
 if ($existe==1)  
 {
 	$usuario=$resultado->fetch_object() or die ("Error");
-	$_SESSION['user']= $usuario->usuLogin;
+	$_SESSION['user'] = $usuario->usuLogin;
 	header("location:../Vista/index2.php?pag=contenido");
 }
 else

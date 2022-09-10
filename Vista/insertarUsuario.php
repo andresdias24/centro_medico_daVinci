@@ -15,7 +15,7 @@
 </head>
 <body>
   <div class="container">
-    <h3 class="text-center pt-5"> Favor Agregar la siguiente información</h3>
+  <h2 class="text-center pt-5"> Insertar Usuarios</h2>
   <hr />
     <div class="form-horizontal">
       <form id="form1" name="form1" action="../Controlador/validarInsertarUsuario.php" method="POST">
