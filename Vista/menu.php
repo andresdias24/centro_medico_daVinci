@@ -82,9 +82,9 @@
                   Registros
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="index2.php?pag=insertarMedico">Listar Médico</a>
-                  <a class="dropdown-item" href="index2.php?pag=consultarMedico">Listar Pacientes</a>
-                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico"> Listar tratamientos</a>
+                  <a class="dropdown-item" href="index2.php?pag=listarMedicos">Listar Médico</a>
+                  <a class="dropdown-item" href="index2.php?pag=listarPacientes">Listar Pacientes</a>
+                  <a class="dropdown-item" href="index2.php?pag=listarCitas"> Listar citas</a>
                 </div>
               </li>
 

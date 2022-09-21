@@ -1,13 +1,13 @@
 <?php
 require "../Modelo/conexionBaseDatos.php";
-require "../modelo/paciente.php";
-$objPaciente = New Paciente();
-$pacientes=$objPaciente->ListarPacientes();
+require "../modelo/citas.php";
+$objCitas = New Citas();
+$citas=$objCitas->ListarCitas();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MeDSyS</title>
+  <title>davinci</title>
    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -23,22 +23,29 @@ $pacientes=$objPaciente->ListarPacientes();
 </head>
 <body>
   <div class="container-fluid">
-    <h1 align="center" class="mt-5">Información de los registro de Pacientes</h1>
+    <h1 align="center" class="mt-5">Información de los registro de citas</h1>
     <table class="table table-hover text-center">
       <h2><tr align="center" bgcolor="#1160CB"></h2>
-            <th class="text-center">Identificación</th>
-            <th class="text-center">Nombres</th>
-            <th class="text-center">Apellidos</th>
-            <th class="text-center">Fecha de Nacimiento</th>
-            <th class="text-center">Sexo</th>   
+            <th class="text-center">idCita</th>
+            <th class="text-center">fecha</th>
+            <th class="text-center">hora</th>
+            <th class="text-center">idPaciente</th>
+            <th class="text-center">idMedico</th>
+            <th class="text-center">idConsultorio</th>   
+            <th class="text-center">estado</th>   
+            <th class="text-center">observaciones</th>   
+   
     <?php
-      while($paciente= $pacientes->fetch_object()){?>
+      while($cita= $citas->fetch_object()){?>
         <tr>
-          <td><?php echo $paciente->pacIdentificacion?></td>
-          <td><?php echo $paciente->pacNombres?></td>
-          <td><?php echo $paciente->pacApellidos?></td>
-          <td><?php echo $paciente->pacFechaNacimiento?></td>
-          <td><?php echo $paciente->pacSexo?></td>         
+          <td><?php echo $cita->idCita ?></td>
+          <td><?php echo $cita->citFecha?></td>
+          <td><?php echo $cita->citHora?></td>
+          <td><?php echo $cita->citPaciente ?></td>
+          <td><?php echo $cita->citMedico ?></td>
+          <td><?php echo $cita->citConsultorio ?></td>
+          <td><?php echo $cita->citEstado?></td>
+          <td><?php echo $cita->citObservaciones?></td>         
         </tr>
      <?Php   
       }

@@ -1,13 +1,13 @@
 <?php
 require "../Modelo/conexionBaseDatos.php";
-require "../modelo/paciente.php";
-$objPaciente = New Paciente();
-$pacientes=$objPaciente->ListarPacientes();
+require "../modelo/medico.php";
+$objMedicos = New Medico();
+$medicos=$objMedicos->ListarMedicos();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MeDSyS</title>
+  <title>davinci</title>
    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -23,22 +23,26 @@ $pacientes=$objPaciente->ListarPacientes();
 </head>
 <body>
   <div class="container-fluid">
-    <h1 align="center" class="mt-5">Información de los registro de Pacientes</h1>
+    <h1 align="center" class="mt-5">Información de los registro de Medicos</h1>
     <table class="table table-hover text-center">
       <h2><tr align="center" bgcolor="#1160CB"></h2>
-            <th class="text-center">Identificación</th>
-            <th class="text-center">Nombres</th>
-            <th class="text-center">Apellidos</th>
-            <th class="text-center">Fecha de Nacimiento</th>
-            <th class="text-center">Sexo</th>   
+            <th class="text-center">idMedico </th>
+            <th class="text-center">medIdentificacion </th>
+            <th class="text-center">medNombres</th>
+            <th class="text-center">medApellidos</th>
+            <th class="text-center">medEspecialidad</th>
+            <th class="text-center">medTelefono</th>
+            <th class="text-center">medCorreo</th>   
     <?php
-      while($paciente= $pacientes->fetch_object()){?>
+      while($medico= $medicos->fetch_object()){?>
         <tr>
-          <td><?php echo $paciente->pacIdentificacion?></td>
-          <td><?php echo $paciente->pacNombres?></td>
-          <td><?php echo $paciente->pacApellidos?></td>
-          <td><?php echo $paciente->pacFechaNacimiento?></td>
-          <td><?php echo $paciente->pacSexo?></td>         
+          <td><?php echo $medico->idMedico?></td>
+          <td><?php echo $medico->medIdentificacion?></td>
+          <td><?php echo $medico->medNombres?></td>
+          <td><?php echo $medico->medApellidos?></td>
+          <td><?php echo $medico->medEspecialidad?></td>
+          <td><?php echo $medico->medTelefono?></td>         
+          <td><?php echo $medico->medCorreo?></td>         
         </tr>
      <?Php   
       }
