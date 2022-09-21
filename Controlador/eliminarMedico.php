@@ -9,7 +9,7 @@ $resultado=$objMedico-> eliminarMedico($_REQUEST['idMedico']);
 if($resultado) {
     ?>
     <script type="text/javascript">
-    alert("el usuario fue eliminado correctamente");
+    alert("el medico fue eliminado correctamente");
     window.location.href='http://localhost/Vista/index2.php?pag=actualizarMedico';
     </script>
     <?php

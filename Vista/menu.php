@@ -54,6 +54,18 @@
                 </div>
               </li>
 
+              
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Pacientes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="index2.php?pag=insertarPaciente">Agregar Pacientes</a>
+                  <a class="dropdown-item" href="index2.php?pag=consultarPaciente">Consultar Pacientes </a>
+                  <a class="dropdown-item" href="index2.php?pag=actualizarPaciente">Editar o Eliminar Pacientes</a>
+                </div>
+              </li>
+
               <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Medicos
@@ -62,6 +74,17 @@
                   <a class="dropdown-item" href="index2.php?pag=insertarMedico">Agregar Médico</a>
                   <a class="dropdown-item" href="index2.php?pag=consultarMedico">Consultar Médicos</a>
                   <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Editar o Eliminar Médicos</a>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Registros
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="index2.php?pag=insertarMedico">Listar Médico</a>
+                  <a class="dropdown-item" href="index2.php?pag=consultarMedico">Listar Pacientes</a>
+                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico"> Listar tratamientos</a>
                 </div>
               </li>
 

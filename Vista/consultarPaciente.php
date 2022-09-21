@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-  <title>daVinci</title>
+  <title>MeDSyS</title>
    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,19 +14,19 @@
 </head>
 <body>
   <div class="container">
-    <h3 class="text-center pt-5">Digite el Documento de Identidad del Médico a Consultar...</h3>
+    <h3 class="text-center pt-5">Digite el Documento de Indentidad del Paciente a Consultar...</h3>
       <hr />
   <div class="form-horizontal">
     <form id="form1" name="form1" action="" method="POST">
       <div class="form-group">
          <label class="col-sm-4 control-label">Identificacion</label>
-          <input name="identificacion" type="text" id="identificacion" class="form-control  col-sm-5" required >
+          <input name="identificacion" type="text" id="identificacion" class="form-control  col-sm-5" required>
       </div>
       
       <div class="form-group">
             <label class="col-sm-4 control-label"></label>
             <div class="col-sm-5">
-              <button type="submit" class="btn btn-dark btn-block">Buscar</button>
+              <button type="submit" class="btn btn-warning btn-block">Buscar</button>
             </div>
           </div>
     </form>
@@ -41,72 +41,42 @@
 <?php
 extract ($_POST); 
 require "../Modelo/conexionBaseDatos.php";
-require "../Modelo/Medico.php";
+require "../Modelo/paciente.php";
 
 if (isset($_POST['identificacion'])) {
-$objMedico= new Medico();
-$resultado=$objMedico->ConsultarMedico($_POST['identificacion']);
+$objMedico= new Paciente();
+$resultado=$objMedico->ConsultarPaciente($_POST['identificacion']);
 if (isset($resultado))  
 { if($resultado->num_rows >0 ){?>
     
-  <h1 align="center">DATOS DEL MEDICO</h1>
+  <h1 align="center">DATOS DEL PACIENTE</h1>
  <table class="table table-hover text-center mt-3">
   <thead>
         <th class="text-center">Identficacion.</th>
         <th class="text-center">Nombre</th>
         <th class="text-center">Apellidos</th>
-        <th class="text-center">Especialidad</th>
-        <th class="text-center">Telefono </th>
-        <th class="text-center">Correo </th>
+        <th class="text-center">Fecha Nacimiento</th>
+        <th class="text-center">Sexo </th>
+        
       </thead>
  <?php
 while($registro=$resultado->fetch_object())
 {
 ?>
   <tr>
-    <td><?php echo $registro->medIdentificacion?></td>
-    <td><?php echo $registro->medNombres?></td>
-    <td><?php echo $registro->medApellidos?></td>
-    <td><?php echo $registro->medEspecialidad?></td>
-    <td><?php echo $registro->medTelefono?></td>
-    <td><?php echo $registro->medCorreo?></td>
-    <td> <a href="index2.php?pag=editarMedico&idMedico=<?php echo $registro->idMedico?>">
-      <span class="class btn btn-warning">Editar</span>
-    </a></td>
-    <td> <a href="index2.php?pag=vistaEliminarMedico&idMedico=<?php echo $registro->idMedico?>">
-      <span class="class btn btn-danger">Eliminar</span>
-    </a></td>
+    <td><?php echo $registro->pacIdentificacion?></td>
+    <td><?php echo $registro->pacNombres?></td>
+    <td><?php echo $registro->pacApellidos?></td>
+    <td><?php echo $registro->pacFechaNacimiento?></td>
+    <td><?php echo $registro->pacSexo?></td>
+    
   </tr>  
  <?php
 }  //cerrando el ciclo while
 ?>
 </table>
 <?php 
-}else{?> <script type="text/javascript">
-    alert("El médico No existe en la base de datos!!!!");
-    window.location.href='index2.php';
-    </script> <?php  ;}
+}else{  echo '<div class="alert alert-danger text-center">El paciente No existe en la base de datos</div>';}
 }
 }
-?>
-
-<?php
-if($msj==1){
-  ?>
-  <script type="text/javascript">
-  alert("EL CLIENTE FUE EDITADO CORRECTAMENTE");
-  window.location.href='index2.php?pag=actualizarMedico';
-  </script>
-  <?php
-}
-
-if($msj==2){
-  ?>
-  <script type="text/javascript">
-  alert("La Información no se actualizó de manera adecuada, FAvor");
-  window.location.href='index2.php';
-  </script>
-  <?php
-}
-
 ?>

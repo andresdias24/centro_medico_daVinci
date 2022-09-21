@@ -69,6 +69,7 @@ class Usuario
 			values ('$this->usuario',md5('$this->password'),'$this->estado','$this->rol')";
 		$resultado=$this->Conexion->query($sql);
 		$this->Conexion->close();
+		// holas
 		return $resultado;	
 	}
 
