@@ -19,21 +19,21 @@
         <div class="col-md-2 logo">
           <div style="display: flex;">
             <div>
-
-              <img src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-health-symbol-free-png-picture-image_1344400.jpg" alt="logo" style="width: 50; height: 50px;">
-
+              <a href="/Vista/index2.php">
+                <img src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-health-symbol-free-png-picture-image_1344400.jpg" alt="logo" style="width: 50; height: 50px;">
+              </a>
             </div>
             <div>
               <span class="float-left">
-                <strong>
                   <p>daVinci </p>
-                </strong>
               </span>
             </div>
           </div>
           <span class="lema">
             <!--<span class="negrita"> <a href="index2.php">SISTEMA MEDICO</a></span><br> -->
             <span class="negrita">Usuario: </span><?php echo $_SESSION['user'] ?>
+            <br>
+            <span class="negrita">Rol: </span><?php echo $_SESSION['rol'] ?>
             <br>
           </span>
         </div>
@@ -84,7 +84,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=listarMedicos">Listar Médico</a>
                   <a class="dropdown-item" href="index2.php?pag=listarPacientes">Listar Pacientes</a>
-                  <a class="dropdown-item" href="index2.php?pag=listarCitas"> Listar citas</a>
+                  <a class="dropdown-item" href="index2.php?pag=listarCitas"> Listar citas Atendidas</a>
                 </div>
               </li>
 
@@ -114,7 +114,6 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarCita">Agregar Cita</a>
                   <a class="dropdown-item" href="index2.php?pag=atenderCita">Atender Cita</a>
-                  <a class="dropdown-item" href="index2.php?pag=editarCita">Editar Cita</a>
                   <a class="dropdown-item" href="index2.php?pag=eliminarCita">Eliminar Cita</a>
                 </div>
               </li>

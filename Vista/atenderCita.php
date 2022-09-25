@@ -48,7 +48,7 @@ while($cita=$citas->fetch_object())
     <td><?php echo $cita->medNombres." ".$cita->medApellidos?></td>
     <td><?php echo $cita->conNombre?></td>
     <td><?php echo $cita->citEstado?></td>
-    <td><a href="index2.php?pag=editarCita&idCita=<?php echo $cita->idCita?>" class="btn btn-warning">Atender</a>
+    <td><a href="index2.php?pag=editarCita&idCita=<?php echo $cita->idCita?>" class="btn btn-primary">Atender</a>
     </td>
   </tr>  
  <?php

@@ -25,15 +25,15 @@
               </div>
               <div>
               <span class="float-left">
-              <strong>
               <p>daVinci </p>
-            </strong>
           </span>
               </div>
             </div>
           <span class="lema">
             <!--<span class="negrita"> <a href="index2.php">SISTEMA MEDICO</a></span><br> -->
             <span class="negrita">Usuario: </span><?php echo $_SESSION['user'] ?>
+            <br>
+            <span class="negrita">Rol: </span><?php echo $_SESSION['rol'] ?>
             <br>
           </span>
         </div>
@@ -44,14 +44,14 @@
           <div class="collapse navbar-collapse" id="uno">
             <ul class="navbar-nav " style="display: contents;">
 
-            <li class="nav-item dropdown active">
+            <!--li-- class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Citas
                 </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarCita">Ajendar Cita</a>
                 </div>
-              </li>
+              </!--li-->
             </ul>
           </div>
           <div>

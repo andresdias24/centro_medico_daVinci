@@ -114,7 +114,19 @@ class Paciente
 		// delete medico
 	public function eliminarPacientes($idPaciente){
 		$this->Conexion=Conectarse();
+		// deletee cita
+		$sql1="delete  from citas WHERE `citPaciente` = $idPaciente;";
+		$resultado=$this->Conexion->query($sql1);
+		// deletee paciente
 		$sql="delete from pacientes where idPaciente='$idPaciente'";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
+	}
+	// validate  a foreign key constraint
+	public function validarPaciente($idPaciente){
+		$this->Conexion=Conectarse();
+		$sql="select * from citas where citPaciente='$idPaciente' and citEstado='Asignado'";
 		$resultado=$this->Conexion->query($sql);
 		$this->Conexion->close();
 		return $resultado;	

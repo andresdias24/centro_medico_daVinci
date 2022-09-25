@@ -17,23 +17,23 @@
     <div class="container-fluid cabecera fixed-top">
       <div class="row">
         <div class="col-md-2 logo">
-            <div style="display: flex;">
-              <div>
-
+          <div style="display: flex;">
+            <div>
+              <a href="/Vista/index2.php">
                 <img src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-health-symbol-free-png-picture-image_1344400.jpg" alt="logo" style="width: 50; height: 50px;">
-
-              </div>
-              <div>
-              <span class="float-left">
-              <strong>
-              <p>daVinci </p>
-            </strong>
-          </span>
-              </div>
+              </a>
             </div>
+            <div>
+              <span class="float-left">
+                  <p>daVinci </p>
+              </span>
+            </div>
+          </div>
           <span class="lema">
             <!--<span class="negrita"> <a href="index2.php">SISTEMA MEDICO</a></span><br> -->
             <span class="negrita">Usuario: </span><?php echo $_SESSION['user'] ?>
+            <br>
+            <span class="negrita">Rol: </span><?php echo $_SESSION['rol'] ?>
             <br>
           </span>
         </div>
@@ -54,7 +54,7 @@
                 </div>
               </!li-->
 
-              
+
               <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Pacientes
@@ -83,7 +83,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <!--a class="dropdown-item" href="index2.php?pag=listarMedicos">Listar Médico</a-->
                   <a class="dropdown-item" href="index2.php?pag=listarPacientes">Listar Pacientes</a>
-                  <a class="dropdown-item" href="index2.php?pag=listarCitas"> Listar citas</a>
+                  <a class="dropdown-item" href="index2.php?pag=listarCitas"> Listar citas Atendidas</a>
                 </div>
               </li>
 
@@ -92,18 +92,18 @@
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Citas
                 </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarCita">Agregar Cita</a>
                   <a class="dropdown-item" href="index2.php?pag=atenderCita">Atender Cita</a>
-                  <a class="dropdown-item" href="index2.php?pag=editarCita">Editar Cita</a>
                   <?php
                   if ($_SESSION['rol'] == "Administrador") { ?>
                     <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Eliminar Consultorios</a>
                   <?php
                   }
-                  ?>                </div>
+                  ?>
+                </div>
               </li>
-              
+
             </ul>
           </div>
           <div>

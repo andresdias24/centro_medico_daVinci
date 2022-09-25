@@ -5,6 +5,16 @@ require"../Modelo/conexionBaseDatos.php";
 require"../Modelo/Paciente.php";
 
 $objPaciente= new Paciente();
+$resultadoPacienteConCita=$objPaciente-> validarPaciente($_REQUEST['idPaciente']);
+
+if($resultadoPacienteConCita->num_rows > 0){
+    ?>
+    <script type="text/javascript">
+    alert("el paciente tiene una cita asignada, no se puede eliminar");
+    window.location.href='http://localhost/Vista/index2.php';
+    </script>
+    <?php
+}else{
 $resultado=$objPaciente-> eliminarPacientes($_REQUEST['idPaciente']);
 if($resultado) {
     ?>
@@ -20,4 +30,5 @@ if($resultado) {
     window.location.href='http://localhost/Vista/index2.php?pag#';
     </script>
     <?php
+}
 }

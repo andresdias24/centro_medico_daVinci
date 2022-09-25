@@ -121,6 +121,16 @@ class Usuario
 		$this->Conexion->close();
 		return $resultado;	
 	}
+	// validar usuario
+	public function validarUsuario($usuario)
+	{
+		$this->Conexion=Conectarse();
+		$sql="select * from usuarios where usuLogin='$usuario'";
+		$resultado=$this->Conexion->query($sql);
+		$this->Conexion->close();
+		return $resultado;	
+	}
+
 }
 
 ?>

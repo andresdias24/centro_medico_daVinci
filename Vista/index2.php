@@ -29,7 +29,7 @@ if (!isset($_REQUEST['msj']))
 <body>
 
     <div id="divEncabezado"><?php include "encabezado.php";?></div>
-	<div id="divMenu"> 
+	<div id="divMenu" style="width: 0px; height: 0px"> 
         <?php
             if($_SESSION['rol'] == "Administrador"){
                 include "menu.php";
@@ -50,10 +50,6 @@ if (!isset($_REQUEST['msj']))
             }
         ?> 
     </div>
-
-    
-
-
 	<div id="divContenido"> <?php include $pag.".php" ;?> </div>
     <div id="divPiePagina"><?php include "piePagina.php";?> </div>
 

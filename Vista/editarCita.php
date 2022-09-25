@@ -1,9 +1,11 @@
 <?php
+extract ($_REQUEST);
 require "../Modelo/conexionBaseDatos.php";
 $objConexion=Conectarse();
 $sql="Select pacNombres,pacApellidos,citObservaciones
 from pacientes, citas 
-where (idPaciente=citPaciente) and (idCita='$_REQUEST[idCita]')";	  
+where (idPaciente=citPaciente) and (idCita='$_REQUEST[idCita]')";
+print_r($_REQUEST['idCita']);	  
 $citas = $objConexion->query($sql);
 $cita=$citas->fetch_object();
 ?>
@@ -11,7 +13,7 @@ $cita=$citas->fetch_object();
 <html lang="en">
 <head>
   <title>MeDSyS</title>
-   <meta charset="UTF-8">
+   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
