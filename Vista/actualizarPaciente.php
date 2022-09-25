@@ -74,7 +74,12 @@ while($registro=$resultado->fetch_object())
       <span class="class btn btn-warning">Editar</span>
     </a></td>
     <td> <a href="index2.php?pag=vistaEliminarPaciente&idPaciente=<?php echo $registro->idPaciente?>">
-      <span class="class btn btn-danger">Eliminar</span>
+    <?php
+      if($_SESSION['rol'] == "Administrador") { ?>
+        <span class="class btn btn-danger">Eliminar</span>
+    <?php  
+    }  
+    ?> 
     </a></td>
   </tr>  
  <?php

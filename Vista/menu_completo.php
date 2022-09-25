@@ -51,15 +51,16 @@
           </div>
         </li>
 
+
         <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Citas
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Agregar Citas</a>
-            <a class="dropdown-item" href="#">Atender Citas</a>
-          </div>
-        </li>
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Citas
+                </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="index2.php?pag=insertarCita">Agregar Cita</a>
+                  <a class="dropdown-item" href="index2.php?pag=atenderCita">Atender Cita</a>
+                </div>
+              </li>
         
         <li class="nav-item dropdown nav-item active">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

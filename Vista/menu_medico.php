@@ -17,20 +17,20 @@
     <div class="container-fluid cabecera fixed-top">
       <div class="row">
         <div class="col-md-2 logo">
-          <div style="display: flex;">
-            <div>
+            <div style="display: flex;">
+              <div>
 
-              <img src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-health-symbol-free-png-picture-image_1344400.jpg" alt="logo" style="width: 50; height: 50px;">
+                <img src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-health-symbol-free-png-picture-image_1344400.jpg" alt="logo" style="width: 50; height: 50px;">
 
-            </div>
-            <div>
+              </div>
+              <div>
               <span class="float-left">
-                <strong>
-                  <p>daVinci </p>
-                </strong>
-              </span>
+              <strong>
+              <p>daVinci </p>
+            </strong>
+          </span>
+              </div>
             </div>
-          </div>
           <span class="lema">
             <!--<span class="negrita"> <a href="index2.php">SISTEMA MEDICO</a></span><br> -->
             <span class="negrita">Usuario: </span><?php echo $_SESSION['user'] ?>
@@ -44,29 +44,28 @@
           <div class="collapse navbar-collapse" id="uno">
             <ul class="navbar-nav " style="display: contents;">
 
-              <li class="nav-item dropdown nav-item active">
+              <!--li class="nav-item dropdown nav-item active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Usuarios </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarUsuario">Agregar Usuarios</a>
                   <a class="dropdown-item" href="index2.php?pag=consultarUsuario">Consultar Usuarios</a>
-                  <a class="dropdown-item" href="index2.php?pag=actualizarUsuario">Editar o Eliminar Usuarios</a>
+                  <a class="dropdown-item" href="index2.php?pag=actualizarUsuario">Editar  o Eliminar Usuarios</a>
 
                 </div>
-              </li>
+              </!li-->
 
-
+              
               <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Pacientes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="index2.php?pag=insertarPaciente">Agregar Pacientes</a>
                   <a class="dropdown-item" href="index2.php?pag=consultarPaciente">Consultar Pacientes </a>
-                  <a class="dropdown-item" href="index2.php?pag=actualizarPaciente">Editar o Eliminar Pacientes</a>
+                  <a class="dropdown-item" href="index2.php?pag=actualizarPaciente">Editar Pacientes</a>
                 </div>
               </li>
 
-              <li class="nav-item dropdown active">
+              <!--li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Medicos
                 </a>
@@ -75,14 +74,14 @@
                   <a class="dropdown-item" href="index2.php?pag=consultarMedico">Consultar Médicos</a>
                   <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Editar o Eliminar Médicos</a>
                 </div>
-              </li>
+              </!--li-->
 
               <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Registros
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="index2.php?pag=listarMedicos">Listar Médico</a>
+                  <!--a class="dropdown-item" href="index2.php?pag=listarMedicos">Listar Médico</a-->
                   <a class="dropdown-item" href="index2.php?pag=listarPacientes">Listar Pacientes</a>
                   <a class="dropdown-item" href="index2.php?pag=listarCitas"> Listar citas</a>
                 </div>
@@ -91,33 +90,20 @@
 
               <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Consultorios
+                  Citas
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="index2.php?pag=insertarMedico">Agregar Consultorio</a>
-                  <a class="dropdown-item" href="index2.php?pag=consultarMedico">Consultar Consultorios</a>
-                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Editar Consultorios</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="index2.php?pag=insertarCita">Agregar Cita</a>
+                  <a class="dropdown-item" href="index2.php?pag=atenderCita">Atender Cita</a>
+                  <a class="dropdown-item" href="index2.php?pag=editarCita">Editar Cita</a>
                   <?php
                   if ($_SESSION['rol'] == "Administrador") { ?>
                     <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Eliminar Consultorios</a>
                   <?php
                   }
-                  ?>
-                </div>
+                  ?>                </div>
               </li>
-
-
-              <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Citas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="index2.php?pag=insertarCita">Agregar Cita</a>
-                  <a class="dropdown-item" href="index2.php?pag=atenderCita">Atender Cita</a>
-                  <a class="dropdown-item" href="index2.php?pag=editarCita">Editar Cita</a>
-                  <a class="dropdown-item" href="index2.php?pag=eliminarCita">Eliminar Cita</a>
-                </div>
-              </li>
+              
             </ul>
           </div>
           <div>

@@ -29,7 +29,31 @@ if (!isset($_REQUEST['msj']))
 <body>
 
     <div id="divEncabezado"><?php include "encabezado.php";?></div>
-	<div id="divMenu"> <?php include "menu.php";?> </div>
+	<div id="divMenu"> 
+        <?php
+            if($_SESSION['rol'] == "Administrador"){
+                include "menu.php";
+            }
+            elseif ($_SESSION['rol'] == 'Medico'){
+                include "menu_medico.php";
+            }
+            elseif ($_SESSION['rol'] == 'Paciente'){
+                include "menu_paciente.php";
+            }
+            else {
+                ?>
+                <script type="text/javascript">
+                alert("El Rol no es correcto!");
+                window.location.href='error404.php';
+                </script>
+                <?php
+            }
+        ?> 
+    </div>
+
+    
+
+
 	<div id="divContenido"> <?php include $pag.".php" ;?> </div>
     <div id="divPiePagina"><?php include "piePagina.php";?> </div>
 
