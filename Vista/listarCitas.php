@@ -1,13 +1,19 @@
 <?php
-require "../Modelo/conexionBaseDatos.php";
-require "../modelo/citas.php";
-$objCitas = New Citas();
-$citas=$objCitas->ListarCitas();
+require "../modelo/conexionBaseDatos.php";
+$objConexion=Conectarse();
+$sql="select idCita,pacNombres, pacApellidos, medNombres, medApellidos, medEspecialidad,conNombre, citFecha, citHora, citEstado, citObservaciones 
+from pacientes, medicos, consultorios, citas
+where (idPaciente = citPaciente) and 
+    (idMedico = citMedico) and 
+    (idConsultorio = citConsultorio) and
+    (citEstado='Atendido')"; 
+$citas= $objConexion->query($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>davinci</title>
+  <title>MeDSyS</title>
    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -22,30 +28,31 @@ $citas=$objCitas->ListarCitas();
 <body>
 </head>
 <body>
-  <div class="container-fluid">
-    <h1 align="center" class="mt-5">Información de los registro de citas</h1>
+
+    <div class="container-fluid">
+    <h1 align="center" class="mt-5">Información de los registro de las citas</h1>
     <table class="table table-hover text-center">
-      <h2><tr align="center" bgcolor="#1160CB"></h2>
-            <th class="text-center">idCita</th>
-            <th class="text-center">fecha</th>
-            <th class="text-center">hora</th>
-            <th class="text-center">idPaciente</th>
-            <th class="text-center">idMedico</th>
-            <th class="text-center">idConsultorio</th>   
-            <th class="text-center">estado</th>   
-            <th class="text-center">observaciones</th>   
-   
+      <h2><tr align="center" bgcolor="#ffc800"></h2>
+            <th class="text-center">Fecha</th>
+            <th class="text-center">Hora</th>
+            <th class="text-center">Paciente</th>
+            <th class="text-center">Médico</th>
+            <th class="text-center">Especialidad</th>
+            <th class="text-center">Consultorio</th>
+            <th class="text-center">Estado</th>
+            <th class="text-center">Observaciones</th>
+          </tr>
     <?php
       while($cita= $citas->fetch_object()){?>
         <tr>
-          <td><?php echo $cita->idCita ?></td>
           <td><?php echo $cita->citFecha?></td>
           <td><?php echo $cita->citHora?></td>
-          <td><?php echo $cita->citPaciente ?></td>
-          <td><?php echo $cita->citMedico ?></td>
-          <td><?php echo $cita->citConsultorio ?></td>
+          <td><?php echo $cita->pacNombres." ".$cita->pacApellidos?></td>
+          <td><?php echo $cita->medNombres." ".$cita->medApellidos?></td>
+          <td><?php echo $cita->medEspecialidad?></td>
+          <td><?php echo $cita->conNombre?></td>
           <td><?php echo $cita->citEstado?></td>
-          <td><?php echo $cita->citObservaciones?></td>         
+          <td><?php echo $cita->citObservaciones?></td>
         </tr>
      <?Php   
       }
@@ -53,9 +60,9 @@ $citas=$objCitas->ListarCitas();
     </table>
   </div> 
   
+  
   <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
   <script type="text/javascript" src="js/popper.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
-

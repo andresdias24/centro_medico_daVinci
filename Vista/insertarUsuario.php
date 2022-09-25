@@ -40,11 +40,10 @@
         <div class="form-group">    
               <label class="col-sm-4 control-label" > Rol del sistema  </label>             
               <select class="col-sm-5 form-control input-lg " name="rol">    
-                  <option class="col-sm-4 control-label text-left">Rol del Sistema</option>
+                  <!--option-- class="col-sm-4 control-label text-left">Rol del Sistema</!--option-->
                   <option value="Administrador">Administrador</option>
                   <option value="Medico">Medico</option>
                   <option value="Paciente">Paciente</option>
-                  <option value="Auxiliar">Auxiliar</option>                  
               </select>              
         </div>      
         <div>
