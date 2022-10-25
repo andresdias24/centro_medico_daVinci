@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="container">
-    <h3 class="text-center pt-5">Digite el Documento de Indentidad del Usuario a Consultar...</h3>
+    <h3 class="text-center pt-5">Digite el Nombre de Usuario a Consultar...</h3>
       </hr>
   <div class="form-horizontal">
     <form id="form1" name="form1" action="" method="POST">
@@ -85,7 +85,7 @@ while($registro=$resultado->fetch_object())
 </table>
 <?php 
 }else{?> <script type="text/javascript">
-    alert("El médico No existe en la base de datos!!!!");
+    alert("El ususario No existe en la base de datos!!!!");
     window.location.href='index2.php';
     </script> <?php  ;}
 }
@@ -114,8 +114,8 @@ if($msj==2){
 if($msj==3){
   ?>
   <script type="text/javascript">
-  alert("EL CLIENTE FUE ELIMINADO CORRECTAMENTE");
-  window.location.href='index2.php?pag=actualizarMedico';
+  alert("EL CLIENTE FUE EDITADO CORRECTAMENTE");
+  window.location.href='index2.php';
   </script>
   <?php
 }

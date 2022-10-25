@@ -88,25 +88,6 @@
                 </div>
               </li>
 
-
-              <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Consultorios
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="index2.php?pag=insertarMedico">Agregar Consultorio</a>
-                  <a class="dropdown-item" href="index2.php?pag=consultarMedico">Consultar Consultorios</a>
-                  <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Editar Consultorios</a>
-                  <?php
-                  if ($_SESSION['rol'] == "Administrador") { ?>
-                    <a class="dropdown-item" href="index2.php?pag=actualizarMedico">Eliminar Consultorios</a>
-                  <?php
-                  }
-                  ?>
-                </div>
-              </li>
-
-
               <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Citas
@@ -114,7 +95,6 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="index2.php?pag=insertarCita">Agregar Cita</a>
                   <a class="dropdown-item" href="index2.php?pag=atenderCita">Atender Cita</a>
-                  <a class="dropdown-item" href="index2.php?pag=eliminarCita">Eliminar Cita</a>
                 </div>
               </li>
             </ul>

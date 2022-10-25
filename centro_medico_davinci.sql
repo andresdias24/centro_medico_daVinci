@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-09-2022 a las 23:16:11
+-- Tiempo de generación: 25-09-2022 a las 23:27:57
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `centro_medico_davinci`
+-- Base de datos: `centro_medico`
 --
 
 -- --------------------------------------------------------
@@ -44,8 +44,7 @@ CREATE TABLE `citas` (
 
 INSERT INTO `citas` (`idCita`, `citFecha`, `citHora`, `citPaciente`, `citMedico`, `citConsultorio`, `citEstado`, `citObservaciones`) VALUES
 (13, '2021-09-09', '16:08:00', 24, 21, 1, 'Atendido', ' Paciente se le suministró acetaminofén'),
-(14, '2021-09-10', '08:20:00', 25, 27, 1, 'Atendido', ' Cita de prueba'),
-(2323, '2022-09-14', '23:40:37', 22, 39, 1, 'Asignado', 'obser');
+(14, '2021-09-10', '08:20:00', 25, 27, 1, 'Atendido', ' Cita de prueba');
 
 -- --------------------------------------------------------
 
@@ -108,8 +107,7 @@ INSERT INTO `medicos` (`idMedico`, `medIdentificacion`, `medNombres`, `medApelli
 (41, '9874', 'Andres Julian', 'Hoyos Caicedo', 'Medico General', '31025698', 'andres@hotmail.com'),
 (42, '78988', 'Carlos', 'Arboleda', 'Medico General', '2117944', 'carlos@gmail.com'),
 (44, '9999', 'Yuliana', 'Alzate', 'Medico General', '3254426', 'yuliana@gmail.com'),
-(45, '785478', 'Javier', 'Londoño', 'Medico General', '325487874', 'javi@gmail.com'),
-(48, '1022962149', 'sena', 'Sena', 'Medico General', '3196748729', 'medico@medico.com');
+(45, '785478', 'Javier', 'Londoño', 'Medico General', '325487874', 'javi@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -132,9 +130,11 @@ CREATE TABLE `pacientes` (
 
 INSERT INTO `pacientes` (`idPaciente`, `pacIdentificacion`, `pacNombres`, `pacApellidos`, `pacFechaNacimiento`, `pacSexo`) VALUES
 (22, '105613', 'Valentina', 'Hernández', '2011-05-27', 'Femenino'),
+(23, '5698', 'Sofia', 'Díaz Montoya', '1998-12-14', 'Femenino'),
 (24, '123', 'Pepito ', 'Pérez Osa', '1989-06-01', 'Masculino'),
 (25, '987', 'Fulanitos', 'De Tal', '1981-06-14', 'Masculino'),
-(30, '1000', 'haroldPaciente', 'harold', '2022-09-07', 'Masculino');
+(26, '007', 'Fulanito', 'De Tales', '1995-04-21', 'Masculino'),
+(27, '008', 'Ramón E.', 'Ramírez', '2000-12-31', 'Masculino');
 
 -- --------------------------------------------------------
 
@@ -146,15 +146,6 @@ CREATE TABLE `roles` (
   `id_rol` int(11) NOT NULL,
   `nombre_rol` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `roles`
---
-
-INSERT INTO `roles` (`id_rol`, `nombre_rol`) VALUES
-(1, 'Administrador'),
-(2, 'Medico'),
-(3, 'Paciente');
 
 -- --------------------------------------------------------
 
@@ -178,11 +169,8 @@ INSERT INTO `usuarios` (`idUsuario`, `usuLogin`, `usuPassword`, `usuEstado`, `us
 (14, 'andres11', 'bewe1234', 'Activo', 'Administrador'),
 (16, 'Jugiro', '3806734b256c27e41ec2c6bffa26d9e7', 'Activo', 'Administrador'),
 (17, 'Carolina', '84d2004bf28a2095230e8e14993d398d', 'Activo', 'Administrador'),
-(1022962155, 'harodl', 'd41d8cd98f00b204e9800998ecf8427e', '', ''),
-(1022962159, 'ha', '925cc8d2953eba624b2bfedf91a91613', 'Activo', 'Rol del Sistema'),
-(1022962160, 'medicoHarold', 'c4ca4238a0b923820dcc509a6f75849b', 'Activo', 'Medico'),
-(1022962163, 'quepasa', 'f21f217ce0bd0026b1f7c44991e5bf0a', 'Activo', 'Paciente'),
-(1022962164, 'garoldUsuarioPa', 'c4ca4238a0b923820dcc509a6f75849b', 'Activo', 'Paciente');
+(1022962154, 'vargas', '662376782219672c87e44e81353a758e', 'Activo', 'Auxiliar'),
+(1022962155, '', 'd41d8cd98f00b204e9800998ecf8427e', '', '');
 
 --
 -- Índices para tablas volcadas
@@ -238,7 +226,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `idCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2326;
+  MODIFY `idCita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `consultorios`
@@ -250,19 +238,19 @@ ALTER TABLE `consultorios`
 -- AUTO_INCREMENT de la tabla `medicos`
 --
 ALTER TABLE `medicos`
-  MODIFY `idMedico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `idMedico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `idPaciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `idPaciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1022962165;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1022962182;
 
 --
 -- Restricciones para tablas volcadas

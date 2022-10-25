@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="container">
-    <h3 class="text-center pt-5">Digite el Documento de Indentidad del Usuario a Consultar...</h3>
+    <h3 class="text-center pt-5">Digite el Nombre de Usuario a Consultar...</h3>
       </hr>
   <div class="form-horizontal">
     <form id="form1" name="form1" action="" method="POST">

@@ -91,8 +91,16 @@
 		$sql="SELECT * from citas";
 		$resultado=$this->Conexion->query($sql);
 		$this->Conexion->close();
-		return $resultado;	
+		return $resultado;
+
 	}
+    public function eliminarCita($idCita){
+        $this->Conexion=Conectarse();
+        $sql="DELETE FROM citas WHERE idCita='$idCita'";
+        $resultado=$this->Conexion->query($sql);
+        $this->Conexion->close();
+        return $resultado;
+    }
 
 
     }

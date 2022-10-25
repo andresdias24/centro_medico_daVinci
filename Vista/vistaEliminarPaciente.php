@@ -29,8 +29,8 @@ if (isset($_REQUEST['idPaciente'])) {
           <div class="form-horizontal">
             <form id="form1" name="form1" action="../Controlador/eliminarPaciente.php" method="POST">
               <div class="form-group">
-                <label class="col-sm-4 control-label">Paciente</label>
-                <input class="form-control col-sm-5" name="paciente" type="text" id="paciente" value="<?php echo $registro->idPaciente ?>" required />
+                <label class="col-sm-4 control-label">Id Paciente</label>
+                <input class="form-control col-sm-5" name="paciente" type="text" id="paciente" value="<?php echo $registro->pacIdentificacion ?>" required />
               </div>
               <br>
               <div class="form-group row">

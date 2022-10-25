@@ -15,7 +15,7 @@
   <div class="container">
     <?php
     if ($_SESSION['rol'] == "Administrador") { ?>
-        <h2>Avisos Importantes Aminstradores</h2>
+        <h2>Avisos Importantes Adminstradores</h2>
 
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->

@@ -99,7 +99,7 @@ while($registro=$resultado->fetch_object())
 if($msj==1){
   ?>
   <script type="text/javascript">
-  alert("EL CLIENTE FUE EDITADO CORRECTAMENTE");
+  alert("EL MÉDICO FUE EDITADO CORRECTAMENTE");
   window.location.href='index2.php?pag=actualizarMedico';
   </script>
   <?php
